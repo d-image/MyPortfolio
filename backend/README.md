@@ -7,6 +7,14 @@ python -m pip install -r backend\requirements.txt
 python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000
 ```
 
+You can also start it from the `backend` directory with:
+
+```powershell
+python main.py
+```
+
+This uses `APP_HOST` and `APP_PORT` when set, and defaults to `127.0.0.1:8000`.
+
 The public API accepts `POST /api/contact` with JSON fields `name`, `email`, and `message`. It validates input, limits request size, checks browser origins and hosts, applies a per-client rate limit, and stores accepted submissions as JSON Lines. `GET /health` is available for health checks. Interactive API documentation is available at `/docs` only in development.
 
 ## Blog accounts
